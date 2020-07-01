@@ -35,6 +35,6 @@ public class Jumping: CachedComponents
     /// </summary>
     void Jump()
     {
-        cachedRigidbody.AddForce(Vector2.up * JumpForce, ForceMode2D.Impulse);
+        cachedRigidbody.velocity = new Vector2(cachedRigidbody.velocity.x, JumpForce);
     }
 }
