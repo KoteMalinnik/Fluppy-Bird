@@ -1,20 +1,37 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// Проверка объекта на выход за пределы.
+/// Проверка объекта на выход за границы.
 /// </summary>
-public class BorderChecker: MonoBehaviour
+public class BorderChecker: CachedComponents
 {
+    /// <summary>
+    /// Положительное значение высоты, при достижении которой игрок проигрывает. Работает как рамка сверху и снизу относительно направления вправо.
+    /// </summary>
+    [SerializeField, Range(1, 1000), Tooltip("Положительное значение высоты, при достижении которой игрок проигрывает. Работает как рамка сверху и снизу относительно направления вправо.")]
+    float borderHeight = 1.0f;
 
-    // Use this for initialization
-    void Start()
+    private void Update()
     {
-
+        if (borderHeight - Mathf.Abs(transform.position.y) <= 0) //проверка на пересечение границ.
+        {
+            BorderCrossing();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Обработка события пересечения границы.
+    /// </summary>
+    void BorderCrossing()
     {
+        if (tempRele) return;
 
+        Log.Message("Пересечение границы. Конец игры.");
+        tempRele = true;
     }
+
+    /// <summary>
+    /// Временное реле, которое не позволяет методу BorderCrossing() вызываться постоянно, а только один раз.
+    /// </summary>
+    bool tempRele = false;
 }
