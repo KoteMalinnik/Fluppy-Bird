@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using System.Collections;
 
 /// <summary>
 /// Кешированные компоненты Rigidbody2D и BoxCollider2D.
@@ -13,7 +12,7 @@ public class CachedComponents: MonoBehaviour
     /// <summary>
     /// Компонент Rigidbody2D объекта.
     /// </summary>
-    protected Rigidbody2D Rigidbody
+    protected Rigidbody2D cachedRigidbody
     {
         get
         {
@@ -27,7 +26,7 @@ public class CachedComponents: MonoBehaviour
     /// <summary>
     /// Компонент BoxCollider2D объекта.
     /// </summary>
-    protected BoxCollider2D BoxCollider
+    protected BoxCollider2D cachedCollider
     {
         get
         {
