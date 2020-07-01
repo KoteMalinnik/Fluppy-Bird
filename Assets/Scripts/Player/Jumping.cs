@@ -3,7 +3,7 @@
 /// <summary>
 /// Прыжок объекта (приложение к объекту импульса, направленного вверх) с некоторой силой.
 /// </summary>
-public class Jumping: CachedComponents
+public class Jumping: CachedComponent<Rigidbody2D>
 {
     /// <summary>
     /// Сила прыжка объекта.
@@ -35,6 +35,6 @@ public class Jumping: CachedComponents
     /// </summary>
     void Jump()
     {
-        cachedRigidbody.velocity = new Vector2(cachedRigidbody.velocity.x, JumpForce);
+        Component.velocity = new Vector2(Component.velocity.x, JumpForce);
     }
 }

@@ -3,7 +3,7 @@
 /// <summary>
 /// Проверка объекта на выход за границы.
 /// </summary>
-public class BorderChecker: CachedComponents
+public class BorderChecker: CachedComponent<Transform>
 {
     /// <summary>
     /// Положительное значение высоты, при достижении которой игрок проигрывает. Работает как рамка сверху и снизу относительно направления вправо.
@@ -13,7 +13,7 @@ public class BorderChecker: CachedComponents
 
     private void Update()
     {
-        if (borderHeight - Mathf.Abs(transform.position.y) <= 0) //проверка на пересечение границ.
+        if (borderHeight - Mathf.Abs(Component.position.y) <= 0) //проверка на пересечение границ.
         {
             BorderCrossing();
         }

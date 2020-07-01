@@ -3,7 +3,7 @@
 /// <summary>
 /// Горизонтальное движение объекта с постоянной скоростью.
 /// </summary>
-public class Movement : CachedComponents
+public class Movement : CachedComponent<Rigidbody2D>
 {
     /// <summary>
     /// Горизонтальная скорость движения объекта.
@@ -13,6 +13,6 @@ public class Movement : CachedComponents
 
     private void FixedUpdate()
     {
-        cachedRigidbody.velocity = new Vector2(Speed, cachedRigidbody.velocity.y);
+        Component.velocity = new Vector2(Speed, Component.velocity.y);
     }
 }
