@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Горизонтальное движение объекта с постоянной скоростью.
+/// </summary>
 public class Movement : CachedComponents
 {
     /// <summary>

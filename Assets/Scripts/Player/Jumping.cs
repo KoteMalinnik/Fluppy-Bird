@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Прыжок объекта (приложение к объекту импульса, направленного вверх) с некоторой силой.
+/// </summary>
 public class Jumping: CachedComponents
 {
     /// <summary>
