@@ -8,7 +8,18 @@ public class ArrayPool
     Transform[] pool = null;
 
     /// <summary>
-    /// Получить первый элемент очереди.
+    /// Получить первый элемент массива не удаляя его из очереди.
+    /// </summary>
+    /// <returns></returns>
+    public Transform CheckFirst()
+    {
+        if (pool == null) return null;
+
+        return pool[0];
+    }
+
+    /// <summary>
+    /// Получить первый элемент очереди и удалить его из очереди.
     /// </summary>
     public Transform GetFirst()
     {
