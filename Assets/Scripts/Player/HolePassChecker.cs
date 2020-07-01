@@ -1,9 +1,10 @@
 ﻿using UnityEngine;
-using System.Collections;
 
+/// <summary>
+/// Проверка на успешное прохождение игроком дырки объекта Obstacle.
+/// </summary>
 public class HolePassChecker: MonoBehaviour
 {
-    [ExecuteInEditMode]
     private void OnTriggerExit2D(Collider2D collision)
     {
         Log.Message("Успешное прохождение дырки.");
