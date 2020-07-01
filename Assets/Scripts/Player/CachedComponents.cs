@@ -34,4 +34,18 @@ public class CachedComponents: MonoBehaviour
             return boxCollider;
         }
     }
+
+    Transform cachedTransform = null;
+
+    /// <summary>
+    /// Компонент Transform объекта.
+    /// </summary>
+    protected new Transform transform
+    {
+        get
+        {
+            if (cachedTransform == null) cachedTransform = GetComponent<Transform>();
+            return cachedTransform;
+        }
+    }
 }
