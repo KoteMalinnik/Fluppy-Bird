@@ -3,8 +3,8 @@
     "",
     "\\Assets",
     "\\Assets\\Scripts",
-    "\\Assets\\Scripts\\GUI"
+    "\\Assets\\Scripts\\StaticClasses"
   ],
-  "SelectedNode": "\\Assets\\Scripts\\GUI",
+  "SelectedNode": "\\Assets\\Scripts\\StaticClasses\\Statements.cs",
   "PreviewInSolutionExplorer": false
 }
