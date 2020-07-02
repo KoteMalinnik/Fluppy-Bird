@@ -44,7 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae660fa51e946974e924c20ba3693df9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObstaclesCount: 4
+  ObstaclesCount: 3
   ObstaclePrefab: {fileID: 4676014701454394777, guid: 05cad941e7fc6394b9dfccc7092963a6,
     type: 3}
 --- !u!114 &8826164602969706390
@@ -59,6 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 405ec690639d9e64c9e9e577cb2ce8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deltaPositionX: 6
+  deltaPositionX: 4
   holeHeight: 3
   offsetX: 2
+  obstacleReplaceOffsetX: 4

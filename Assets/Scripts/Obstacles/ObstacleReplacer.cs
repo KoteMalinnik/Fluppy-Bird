@@ -52,11 +52,13 @@ public class ObstacleReplacer : MonoBehaviour
         this.pool = pool ?? throw new ArgumentNullException();
         target = Camera.main.transform;
     }
-
+	
+	[SerializeField, Range(1,10)]
+	float obstacleReplaceOffsetX = 10;
     
     private void Update()
     {
-        if (pool.CheckFirst().position.x < target.position.x - 10) //если за пределами видимости камеры.
+        if (pool.CheckFirst().position.x < target.position.x - obstacleReplaceOffsetX) //если за пределами видимости камеры.
         {
             var obstacleToReplace = pool.GetFirst();
             Replace(obstacleToReplace);
