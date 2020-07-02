@@ -1,18 +1,41 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class PauseController : MonoBehaviour
+﻿///<summary>
+/// Состояния игрового процесса.
+///</summary>
+public static class Statements
 {
-    // Start is called before the first frame update
-    void Start()
+    static bool pause = true;
+
+    ///<summary>
+    /// Пауза.
+    ///</summary>
+    public static bool Pause
     {
-        
+        get
+        {
+            return pause;
+        }
+        set
+        {
+            pause = value;
+            Log.Message("Пазуа: " + pause);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    static bool gameOver = false;
+
+    ///<summary>
+    /// Конец игры.
+    ///</summary>
+    public static bool GameOver
     {
-        
+        get
+        {
+            return gameOver;
+        }
+        set
+        {
+            gameOver = value;
+            Log.Message("Проигрыш: " + gameOver);
+        }
     }
 }
