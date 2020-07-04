@@ -18,6 +18,8 @@ public static class ScoreController
     /// </summary>
     public static void AddCurrentScore()
     {
+        if (Statements.GameOver) return;
+
         score++;
         Log.Message("Текущий счет: " + score);
 

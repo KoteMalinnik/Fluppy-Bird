@@ -25,6 +25,7 @@ public class BorderChecker: CachedComponent<Transform>
     void BorderCrossing()
     {
         if (tempRele) return;
+        if (Statements.GameOver) return;
 
         Log.Message("Пересечение границы. Конец игры.");
         tempRele = true;
