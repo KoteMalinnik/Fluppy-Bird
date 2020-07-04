@@ -8,5 +8,6 @@ public class HolePassChecker: MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         Log.Message("Успешное прохождение дырки.");
+        ScoreController.AddCurrentScore();
     }
 }
