@@ -8,5 +8,6 @@ public class CollisionHandling: MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Log.Message("Столкновение . Конец игры.");
+        Statements.GameOver = true;
     }
 }
