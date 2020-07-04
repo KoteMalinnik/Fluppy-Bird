@@ -10,8 +10,11 @@ public class OnLevelBegin : MonoBehaviour
         Statements.Pause = !Statements.GameOver;
         Statements.GameOver = false;
 
+        ScoreController.LoadBestScore();
         ScoreController.ClearScore();
-        GUIController.instance.UpdateScoreGUI();
+        
+        GUIController.instance.UpdateScoreGUI(0);
+        GUIController.instance.UpdateBestScoreGUI(ScoreController.bestScore);
 
         Destroy(gameObject);
     }

@@ -23,9 +23,17 @@ public class GUIController : MonoBehaviour
     /// <summary>
     /// Обновит очки на GUI.
     /// </summary>
-    public void UpdateScoreGUI()
+    public void UpdateScoreGUI(int val)
     {
-        text_Score.text = ScoreController.score.ToString();
+        text_Score.text = val.ToString();
+    }
+
+    [SerializeField]
+    Text text_bestScoreValue = null;
+
+    public void UpdateBestScoreGUI(int val)
+    {
+        text_bestScoreValue.text = val.ToString();
     }
 
     /// <summary>

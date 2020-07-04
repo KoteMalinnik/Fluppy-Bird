@@ -6,12 +6,12 @@ public static class ScoreController
     /// <summary>
     /// Текущий счет.
     /// </summary>
-    public static ushort score { get; private set; } = 0;
+    public static int score { get; private set; } = 0;
     
     /// <summary>
     /// Лучший счет.
     /// </summary>
-    public static ushort bestScore { get; private set; } = 0;
+    public static int bestScore { get; private set; } = 0;
 
     /// <summary>
     /// Добавить одно очко к счету.
@@ -22,11 +22,14 @@ public static class ScoreController
 
         score++;
         Log.Message("Текущий счет: " + score);
+        GUIController.instance.UpdateScoreGUI(score);
 
         if (score > bestScore)
         {
             bestScore = score;
             Log.Message("Лучший счет: " + score);
+            GUIController.instance.UpdateBestScoreGUI(bestScore);
+            Serialization.Save("bestScore", bestScore);
         }
     }
 
@@ -36,5 +39,10 @@ public static class ScoreController
     public static void ClearScore()
     {
         score = 0;
+    }
+
+    public static void LoadBestScore()
+    {
+        bestScore = Serialization.Load("bestScore", 0);
     }
 }

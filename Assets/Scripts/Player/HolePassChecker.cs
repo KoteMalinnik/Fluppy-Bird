@@ -11,6 +11,5 @@ public class HolePassChecker: MonoBehaviour
 
         Log.Message("Успешное прохождение дырки.");
         ScoreController.AddCurrentScore();
-        GUIController.instance.UpdateScoreGUI();
     }
 }
