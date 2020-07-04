@@ -36,5 +36,6 @@ public class Jumping: CachedComponent<Rigidbody2D>
     void Jump()
     {
         Component.velocity = new Vector2(Component.velocity.x, JumpForce);
+        SoundController.PlaySound();
     }
 }

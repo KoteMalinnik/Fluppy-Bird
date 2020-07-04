@@ -20,11 +20,17 @@ public class GUIController : MonoBehaviour
     [SerializeField]
     Text text_Score = null;
 
+    /// <summary>
+    /// Обновит очки на GUI.
+    /// </summary>
     public void UpdateScoreGUI()
     {
         text_Score.text = ScoreController.score.ToString();
     }
 
+    /// <summary>
+    /// Изменит состояние паузы на обратное.
+    /// </summary>
     public void ChangePauseStatement()
     {
         Statements.Pause = !Statements.Pause;
@@ -36,17 +42,41 @@ public class GUIController : MonoBehaviour
     [SerializeField]
     GameObject button_Pause = null;
 
+    /// <summary>
+    /// Переключит видимость объектов panel_MainMenuGUI и button_Pause.
+    /// </summary>
+    /// <param name="state"></param>
     public void ChangeMainMenuGUIVisibility(bool state)
     {
         panel_MainMenuGUI.SetActive(state);
         button_Pause.SetActive(!state);
     }
 
-    public void Play()
+    /// <summary>
+    /// Перезагрузит сцену, если игрок проиграл.
+    /// </summary>
+    public void Restart()
     {
         if (Statements.GameOver)
         {
             SceneManager.LoadScene(0);
         }
+    }
+
+    [SerializeField]
+    Toggle sound = null;
+
+    /// <summary>
+    /// Присвоит значению звука значение переключателя sound.
+    /// </summary>
+    public void ChangeSoundToggle()
+    {
+        SoundController.Sound = sound.isOn;
+    }
+
+    private void Start()
+    {
+        sound.isOn = Serialization.Load("sound", true);
+        ChangeSoundToggle();
     }
 }
