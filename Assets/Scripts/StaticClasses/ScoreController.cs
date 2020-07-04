@@ -1,18 +1,38 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-public class ScoreController : MonoBehaviour
+﻿/// <summary>
+/// Управление счетом.
+/// </summary>
+public static class ScoreController
 {
-    // Start is called before the first frame update
-    void Start()
+    /// <summary>
+    /// Текущий счет.
+    /// </summary>
+    public static ushort score { get; private set; } = 0;
+    
+    /// <summary>
+    /// Лучший счет.
+    /// </summary>
+    public static ushort bestScore { get; private set; } = 0;
+
+    /// <summary>
+    /// Добавить одно очко к счету.
+    /// </summary>
+    public static void AddCurrentScore()
     {
-        
+        score++;
+        Log.Message("Текущий счет: " + score);
+
+        if (score >= bestScore)
+        {
+            bestScore = score;
+            Log.Message("Лучший счет: " + score);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    /// <summary>
+    /// Сделает текущий счет равным 0.
+    /// </summary>
+    public static void ClearScore()
     {
-        
+        score = 0;
     }
 }
