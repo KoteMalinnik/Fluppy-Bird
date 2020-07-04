@@ -19,8 +19,6 @@ public class Generation : MonoBehaviour
     {
         if (ObstaclePrefab == null) Log.Error("Префаб преграды пуст.");
 
-        Log.Message("Генерация преград в количестве: " + ObstaclesCount);
-
         ArrayPool pool = new ArrayPool();
 
         var replacer = GetComponent<ObstacleReplacer>();

@@ -7,11 +7,10 @@ public class OnLevelBegin : MonoBehaviour
 {
     private void Awake()
     {
-        Statements.Pause = true;
+        Statements.Pause = !Statements.GameOver;
         Statements.GameOver = false;
 
         ScoreController.ClearScore();
-
         GUIController.instance.UpdateScoreGUI();
 
         Destroy(gameObject);

@@ -1,4 +1,5 @@
-﻿///<summary>
+﻿using UnityEngine;
+///<summary>
 /// Состояния игрового процесса.
 ///</summary>
 public static class Statements
@@ -18,6 +19,10 @@ public static class Statements
         {
             pause = value;
             Log.Message("Пазуа: " + pause);
+
+            Time.timeScale = pause ? 0 : 1;
+
+            GUIController.instance.ChangeMainMenuGUIVisibility(pause);
         }
     }
 

@@ -23,7 +23,7 @@ public static class ScoreController
         score++;
         Log.Message("Текущий счет: " + score);
 
-        if (score >= bestScore)
+        if (score > bestScore)
         {
             bestScore = score;
             Log.Message("Лучший счет: " + score);

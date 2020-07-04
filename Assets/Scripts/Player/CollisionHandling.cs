@@ -11,5 +11,6 @@ public class CollisionHandling: MonoBehaviour
 
         Log.Message("Столкновение . Конец игры.");
         Statements.GameOver = true;
+        Statements.Pause = true;
     }
 }

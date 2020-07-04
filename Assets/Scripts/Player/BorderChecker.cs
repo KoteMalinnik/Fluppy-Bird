@@ -30,6 +30,7 @@ public class BorderChecker: CachedComponent<Transform>
         Log.Message("Пересечение границы. Конец игры.");
         tempRele = true;
         Statements.GameOver = true;
+        Statements.Pause = true;
     }
 
     /// <summary>

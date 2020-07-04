@@ -30,8 +30,6 @@ public class ObstacleReplacer : MonoBehaviour
     /// <param name="obstacle"></param>
     public void Replace(Transform obstacle)
     {
-        Log.Message($"Перемещение объекта -{obstacle.name}-.");
-
         offsetX += deltaPositionX;
         var positionY = UnityEngine.Random.Range(-holeHeight, holeHeight);
         obstacle.position = new Vector3(offsetX, positionY, 0);
