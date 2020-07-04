@@ -12,6 +12,8 @@ public class OnLevelBegin : MonoBehaviour
 
         ScoreController.ClearScore();
 
+        GUIController.instance.UpdateScoreGUI();
+
         Destroy(gameObject);
     }
 }
