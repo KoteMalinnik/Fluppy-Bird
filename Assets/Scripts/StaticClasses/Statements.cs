@@ -18,8 +18,6 @@ public static class Statements
         set
         {
             pause = value;
-            Log.Message("Пазуа: " + pause);
-
             Time.timeScale = pause ? 0 : 1;
 
             GUIController.instance.ChangeMainMenuGUIVisibility(pause);
@@ -40,7 +38,6 @@ public static class Statements
         set
         {
             gameOver = value;
-            Log.Message("Проигрыш: " + gameOver);
         }
     }
 }

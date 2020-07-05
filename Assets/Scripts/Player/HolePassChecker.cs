@@ -9,7 +9,6 @@ public class HolePassChecker: MonoBehaviour
     {
         if (Statements.GameOver) return;
 
-        Log.Message("Успешное прохождение дырки.");
         ScoreController.AddCurrentScore();
     }
 }

@@ -21,13 +21,11 @@ public static class ScoreController
         if (Statements.GameOver) return;
 
         score++;
-        Log.Message("Текущий счет: " + score);
         GUIController.instance.UpdateScoreGUI(score);
 
         if (score > bestScore)
         {
             bestScore = score;
-            Log.Message("Лучший счет: " + score);
             GUIController.instance.UpdateBestScoreGUI(bestScore);
             Serialization.Save("bestScore", bestScore);
         }
