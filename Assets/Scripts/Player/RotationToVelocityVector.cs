@@ -1,5 +1,8 @@
 ﻿ using UnityEngine;
 
+/// <summary>
+/// Поворот объекта в направлении движения.
+/// </summary>
 public class RotationToVelocityVector: CachedComponent<Rigidbody2D>
 {
     Transform _transform = null;
@@ -13,10 +16,8 @@ public class RotationToVelocityVector: CachedComponent<Rigidbody2D>
         }
     }
 
-    Vector2 position = Vector2.zero;
     private void Update()
     {
-        position = transform.position;
-        Debug.DrawLine(position, position + Component.velocity);
+        transform.right = (Vector2)transform.position + Component.velocity;
     }
 }
