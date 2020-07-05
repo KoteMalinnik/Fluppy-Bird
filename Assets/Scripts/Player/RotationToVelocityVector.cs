@@ -18,6 +18,6 @@ public class RotationToVelocityVector: CachedComponent<Rigidbody2D>
 
     private void Update()
     {
-        transform.right = (Vector2)transform.position + Component.velocity;
+        if (!Statements.GameOver) transform.right = (Vector2)transform.position + Component.velocity;
     }
 }
