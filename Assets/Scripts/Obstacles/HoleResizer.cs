@@ -25,8 +25,8 @@ public class HoleResizer : MonoBehaviour
     [ExecuteInEditMode]
     void resize()
     {
-        hole.size = new Vector2(1, holeSize);
-        upperBox.transform.localPosition = new Vector3(0, 5 + holeSize/2, 0);
+        hole.size = new Vector2(hole.size.x, holeSize);
+        upperBox.transform.localPosition = new Vector3(0, 0.38f + holeSize/2, 0);
         downerBox.transform.localPosition = -upperBox.transform.localPosition;
     }
 }
