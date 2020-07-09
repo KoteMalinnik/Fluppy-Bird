@@ -79,12 +79,12 @@ public class GUIController : MonoBehaviour
     /// </summary>
     public void ChangeSoundToggle()
     {
-        SoundController.Sound = sound.isOn;
+        SoundController.Sound = !sound.isOn;
     }
 
     private void Start()
     {
-        sound.isOn = Serialization.Load("sound", true);
+        sound.isOn = !Serialization.Load("sound", true);
         ChangeSoundToggle();
     }
 }
