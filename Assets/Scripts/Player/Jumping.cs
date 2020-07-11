@@ -25,7 +25,7 @@ public class Jumping: CachedComponent<Rigidbody2D>
 #else
          if (Input.touchCount > 0)
         {
-            Jump();
+            if (Input.GetTouch(0).phase == TouchPhase.Began) Jump();
         }
 #endif
     }
