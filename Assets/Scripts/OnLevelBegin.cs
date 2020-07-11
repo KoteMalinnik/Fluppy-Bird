@@ -7,6 +7,8 @@ public class OnLevelBegin : MonoBehaviour
 {
     private void Awake()
     {
+        Application.targetFrameRate = 60;
+
         Statements.Pause = !Statements.GameOver;
         Statements.GameOver = false;
 
